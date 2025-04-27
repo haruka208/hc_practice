@@ -1,168 +1,166 @@
 @charset "utf-8";
 
 .container {
-    margin: 0 auto;
-    width: 960px;
-    padding: 0 4%;
-    text-align: center;
+  margin: 0 auto;
+  width: 960px;
+  padding: 0 4%;
+  text-align: center;
 }
 
 nav {
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .left-nav {
-    background-color: #374150;
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 22px;
-    align-items: center;
-
+  background-color: #374150;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 22px;
+  align-items: center;
 }
 
 .right-nav {
-    font-size: 19px;
+  font-size: 19px;
 }
 
-.right-nav li{
-    margin: 0 15px;
+.right-nav li {
+  margin: 0 15px;
 }
 
 ul {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 li {
-    float: left;
+  float: left;
 }
 
 .prof-img1 {
-    width: 100vw; /*幅を狭めていくと左右に隙間ができてくるのが解消できない*/
-    height: 600px;
-    object-fit: cover;
-    display: block;
-    margin-left: calc(-50vw + 50%);
+  width: 100vw; /*幅を狭めていくと左右に隙間ができてくるのが解消できない*/
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  margin-left: calc(-50vw + 50%);
 }
 
 section {
-    margin: 100px 0;
+  margin: 100px 0;
 }
 
-
 h1 {
-    font-size: 30px;
-    border-bottom: 2px solid #000;
-    display: inline-block;
-    padding-bottom: 7px;
-    margin-bottom: 60px;
-    color: #1E2843;
+  font-size: 30px;
+  border-bottom: 2px solid #000;
+  display: inline-block;
+  padding-bottom: 7px;
+  margin-bottom: 60px;
+  color: #1e2843;
 }
 
 .sub-contents1 {
-    display: grid;
-    grid-template-columns: 5fr 1fr;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
 }
 
 h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
 .sub-contents1 h2 {
-    text-align: left; /*h2も中央に寄ってしまったので左に寄せた*/
-    margin-left: 110px; /*左に寄りすぎたので無理やり左端をpに合わせた*/
+  text-align: left; /*h2も中央に寄ってしまったので左に寄せた*/
+  margin-left: 110px; /*左に寄りすぎたので無理やり左端をpに合わせた*/
 }
 
 p {
-    line-height: 1.5em;
-    margin-bottom: 15px;
-    font-size: 19px;
+  line-height: 1.5em;
+  margin-bottom: 15px;
+  font-size: 19px;
 }
 
 .sub-contents1 p {
-    width: 110%; /*右のimgとの隙間をなくすために無理やり寄せた*/
+  width: 110%; /*右のimgとの隙間をなくすために無理やり寄せた*/
 }
 
 .prof-img2 {
-    border-radius: 50%;
-    width: 75%;
+  border-radius: 50%;
+  width: 75%;
 }
 
 .sub-contents2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
 }
 
 .prof-img3 {
-    width: 100%;
+  width: 100%;
 }
 
 footer {
-    padding-bottom: 10px;
-    margin: 20px 0;
-    border-bottom: 1px solid #000;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+  padding-bottom: 10px;
+  margin: 20px 0;
+  border-bottom: 1px solid #000;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 /*スマートフォン用の設定 モバイルファーストにするのを忘れました*/
 @media screen and (max-width: 600px) {
-    .container {
-        width: 100%; /*左側に隙間ができる*/
-        }
+  .container {
+    width: 100%; /*左側に隙間ができる*/
+  }
 
-    nav {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-    }
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
 
-    .left-nav {
-        width: 88px;
-        height: 35px;
-        line-height: 35px;
-        text-align: center;
-        margin-left: 30px;
-    }
+  .left-nav {
+    width: 88px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin-left: 30px;
+  }
 
-    .right-nav {
-        margin-right: 10px;
-    }
+  .right-nav {
+    margin-right: 10px;
+  }
 
-    .sub-contents1 {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+  .sub-contents1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 
-    h1 {
-        font-size: 40px;
-    }
+  h1 {
+    font-size: 40px;
+  }
 
-    .sub-contents1 h2 {
-        text-align: center; 
-        margin: 0 0 15px 0;
-    }
+  .sub-contents1 h2 {
+    text-align: center;
+    margin: 0 0 15px 0;
+  }
 
-    .sub-contents1 p {
-        text-align: left;
-        margin-bottom: 10px;
-    }
+  .sub-contents1 p {
+    text-align: left;
+    margin-bottom: 10px;
+  }
 
-    .prof-img2 {
-        width: 30%;
-    }
+  .prof-img2 {
+    width: 30%;
+  }
 
-    .sub-contents2 {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+  .sub-contents2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 
-    footer {
-        border-bottom: 10px solid #000;
-    }
+  footer {
+    border-bottom: 10px solid #000;
+  }
 }
