@@ -1,38 +1,34 @@
 @charset "utf-8";
 
-.container {
-  margin: 0 auto;
-  width: 960px;
-  padding: 0 4%;
-  text-align: center;
-}
-
 nav {
-  margin: 10px 0;
+  padding: 15px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 4%;
 }
 
 .left-nav {
   background-color: #374150;
   color: #fff;
-  padding: 5px 10px;
-  font-size: 22px;
-  align-items: center;
+  padding: 10px 15px;
+  font-size: 25px;
 }
 
 .right-nav {
   font-size: 19px;
 }
 
-.right-nav li {
-  margin: 0 15px;
-}
-
-ul {
+.right-nav ul {
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
 }
 
 li {
@@ -40,15 +36,19 @@ li {
 }
 
 .prof-img1 {
-  width: 100vw; /*幅を狭めていくと左右に隙間ができてくるのが解消できない*/
+  background-image: url(../image/1920x1280.png);
+  background-size: cover;
+  width: 100vw;
   height: 600px;
-  object-fit: cover;
-  display: block;
-  margin-left: calc(-50vw + 50%);
+  background-position: center;
 }
 
 section {
   margin: 100px 0;
+}
+
+.center {
+  text-align: center;
 }
 
 h1 {
@@ -61,8 +61,9 @@ h1 {
 }
 
 .sub-contents1 {
-  display: grid;
-  grid-template-columns: 5fr 1fr;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
 }
 
 h2 {
@@ -70,19 +71,10 @@ h2 {
   margin-bottom: 15px;
 }
 
-.sub-contents1 h2 {
-  text-align: left; /*h2も中央に寄ってしまったので左に寄せた*/
-  margin-left: 110px; /*左に寄りすぎたので無理やり左端をpに合わせた*/
-}
-
 p {
   line-height: 1.5em;
   margin-bottom: 15px;
   font-size: 19px;
-}
-
-.sub-contents1 p {
-  width: 110%; /*右のimgとの隙間をなくすために無理やり寄せた*/
 }
 
 .prof-img2 {
@@ -94,6 +86,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
+  text-align: center;
 }
 
 .prof-img3 {
@@ -111,29 +104,24 @@ footer {
 /*スマートフォン用の設定 モバイルファーストにするのを忘れました*/
 @media screen and (max-width: 600px) {
   .container {
-    width: 100%; /*左側に隙間ができる*/
-  }
-
-  nav {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    width: 100%;
   }
 
   .left-nav {
-    width: 88px;
+    font-size: 35px;
+    width: 150px;
     height: 35px;
     line-height: 35px;
-    text-align: center;
     margin-left: 30px;
   }
 
   .right-nav {
-    margin-right: 10px;
+    font-size: 20px;
+    margin-right: 30px;
   }
 
   .sub-contents1 {
-    display: grid;
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   h1 {
@@ -141,12 +129,10 @@ footer {
   }
 
   .sub-contents1 h2 {
-    text-align: center;
     margin: 0 0 15px 0;
   }
 
   .sub-contents1 p {
-    text-align: left;
     margin-bottom: 10px;
   }
 
