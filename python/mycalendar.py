@@ -4,13 +4,26 @@ import datetime
 month = 2
 
 if "-m" in sys.argv:
+  # try:
+  #   month = int(sys.argv[2])
+  #   if not 1 <= month <= 12:
+  #     print(f"{month} is neither a month number (1..12) nor a name")
+  #     sys.exit(1)
+  # except(IndexError, ValueError):
+  #   print("Please specify 1~12 after the -m option")
+  #   sys.exit(1)
+
+  #ネストを浅くする
+  if len(sys.argv) < 3:
+    print("Please specify 1~12 after the -m option")
+    sys.exit(1)
   try:
     month = int(sys.argv[2])
-    if not 1 <= month <= 12:
-      print(f"{month} is neither a month number (1..12) nor a name")
-      sys.exit(1)
-  except(IndexError, ValueError):
+  except ValueError:
     print("Please specify 1~12 after the -m option")
+    sys.exit(1)
+  if not 1 <= month <= 12:
+    print(f"{month} is neither a month number (1..12) nor a name")
     sys.exit(1)
 
 d = datetime.date(2022, month, 1)
