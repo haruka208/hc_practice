@@ -21,7 +21,7 @@ def judge_golf_score(X, Y):
   elif X - 2 == Y:
     return "イーグル"
   elif X - 3 == Y:
-      return "アルバトロス"
+    return "アルバトロス"
 
 
 # cat case.txt | python golf_score.pyでターミナルからテストケースを読み込んでそれぞれリスト形式に変換
