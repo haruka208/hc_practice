@@ -1,7 +1,7 @@
 import sys
 import datetime
 
-month = 2
+month = 6
 
 if "-m" in sys.argv:
   # try:
@@ -26,7 +26,7 @@ if "-m" in sys.argv:
     print(f"{month} is neither a month number (1..12) nor a name")
     sys.exit(1)
 
-d = datetime.date(2022, month, 1)
+d = datetime.date(2025, month, 1)
 
 # week = [0, 1, 2, 3, 4, 5, 6]
 days = []
