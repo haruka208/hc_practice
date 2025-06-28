@@ -1,7 +1,11 @@
 import sys
 import datetime
 
-month = 6
+today = datetime.date.today()
+year = today.year
+month = today.month
+
+# month = 6
 
 if "-m" in sys.argv:
   # try:
@@ -26,24 +30,28 @@ if "-m" in sys.argv:
     print(f"{month} is neither a month number (1..12) nor a name")
     sys.exit(1)
 
-d = datetime.date(2025, month, 1)
+# d = datetime.date(year, month, 1)
 
 # week = [0, 1, 2, 3, 4, 5, 6]
 days = []
 
 # 最初の日付の曜日になるまでdaysに空白を入れる（daysの作成）
-for dow in range(7):
-  if dow == d.weekday():
-    break
-  else:
-    days.append(" ")
+first_day = datetime.date(year, month, 1)
+# for date_of_week in range(7):
+#   if date_of_week == first_day.weekday():
+#     break
+#   else:
+#     days.append(" ")
+for _ in range(first_day.weekday()):
+  days.append(" ")
 
 # daysに日を足していって最後の日付になったら繰り返しをやめる（daysの作成）
 
-year = d.year
+# year = d.year
 # month = d.month
-day = d.day
+# day = d.day
 
+day = 1
 while True:
   try:
     d = datetime.date(year, month, day)
