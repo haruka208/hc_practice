@@ -36,15 +36,15 @@ updated_at { label: "datetime, not null"}
 
 [follows]
 *id {label: "bigint, not null"}
-user_id {label: "bigint, not null, FK(users)"}
-target_user_id {label: "bigint, not null, FK(users)"}
+follower_id {label: "bigint, not null, FK(users)"}
+followee_id {label: "bigint, not null, FK(users)"}
 created_at { label: "datetime, not null"}
 updated_at { label: "datetime, not null"}
 
-[dms]
+[direct_messages]
 *id {label: "bigint, not null"}
-user_id {label: "bigint, not null, FK(users)"}
-target_user_id {label: "bigint, not null, FK(users)"}
+sender_id {label: "bigint, not null, FK(users)"}
+recipient_id {label: "bigint, not null, FK(users)"}
 content  {label: "varchar(10000), not null"}
 created_at { label: "datetime, not null"}
 updated_at { label: "datetime, not null"}
@@ -57,7 +57,7 @@ action_name {label: "varchar(100), not null, uniq"}
 [actions]
 *id {label: "bigint, not null"}
 user_id {label: "bigint, not null, FK(users)"}
-target_user_id {label: "bigint, FK(users)"}
+recipient_id {label: "bigint, FK(users)"}
 post_id {label: "bigint, FK(posts)"}
 action_type_id {label: "varchar(100), not null, FK(action_types)"}
 created_at { label: "datetime, not null"}
@@ -80,12 +80,12 @@ updated_at { label: "datetime, not null"}
 users 1--* `posts`
 users 1--* `likes`
 users 1--* `reposts`
-users 1--* `follows` # user_id フォローした人
-users 1--* `follows` # target_user_id フォローされた人
-users 1--* `dms` # user_id DMした人
-users 1--* `dms` # target_user_id DMされた人
+users 1--* `follows` # follower_id フォローした人
+users 1--* `follows` # followee_id フォローされた人
+users 1--* `direct_messages` # sender_id DMした人
+users 1--* `direct_messages` # recipient_id DMされた人
 users 1--* `actions` # user_id 通知した人
-users ?--* `actions` # target_user_id 通知された人
+users ?--* `actions` # recipient_id 通知された人
 users 1--* `bookmarks`
 
 posts 1--* `likes`
